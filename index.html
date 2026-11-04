@@ -141,11 +141,12 @@ button{font:inherit;color:inherit}
 
 /* planes */
 .plans{max-width:960px}
-table{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border-radius:22px;overflow:hidden;border:2px solid var(--line)}
-caption{text-align:left;padding:0 0 14px;font-size:.9rem;color:var(--mute)}
-th,td{padding:15px 22px;text-align:left;border-bottom:1px solid var(--line)}
+.tbl{border-radius:22px;overflow:hidden;border:2px solid var(--line);background:#fff}
+table{width:100%;border-collapse:collapse;table-layout:fixed}
+th,td{padding:15px 22px;text-align:center;border-bottom:1px solid var(--line)}
 thead th{padding-top:30px;padding-bottom:26px;vertical-align:bottom;border-bottom:2px solid var(--line)}
-thead th:first-child{width:46%}
+thead th:first-child,tbody th{width:52%;text-align:left}
+thead th:first-child{color:var(--mute);font-weight:500;font-size:.95rem}
 th[scope=row]{font-weight:500}
 tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
 .tier{font-family:var(--display);font-stretch:75%;font-weight:800;font-size:1.9rem;line-height:1}
@@ -153,7 +154,6 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
 .price small{font-family:var(--body);font-weight:500;font-size:.95rem;color:var(--mute);margin-left:4px}
 .pre-col{background:var(--cobalt);color:#fff;border-color:rgba(255,255,255,.18)}
 thead .pre-col .price small{color:#cfdcff}
-td.pre-col{text-align:left}
 .ok{color:var(--turq);font-size:1.15rem}
 .pre-col .ok{color:var(--mark)}
 .no{color:#a7b4d8}
@@ -180,10 +180,14 @@ footer p+p{margin-top:6px;max-width:52em}
 }
 @media(max-width:620px){
   body{font-size:1rem}
-  th,td{padding:12px 14px}
-  thead th:first-child{width:38%}
-  .price{font-size:2.6rem}
-  .tier{font-size:1.5rem}
+  th,td{padding:12px 8px}
+  tbody th{padding-left:12px}
+  thead th:first-child,tbody th{width:40%}
+  thead th{padding-top:22px;padding-bottom:18px}
+  .price{font-size:2.1rem}
+  .price small{display:block;margin:2px 0 0;font-size:.78rem}
+  .tier{font-size:1.25rem}
+  .badge{font-size:.7rem;padding:1px 7px}
   .g{grid-template-columns:1fr}
   .g .pct{grid-row:auto;grid-column:auto;text-align:left;display:flex;align-items:baseline;gap:8px}
   .join{margin-left:0}
@@ -311,11 +315,11 @@ footer p+p{margin-top:6px;max-width:52em}
       <h2>Gratis para empezar, Premium si quieres más</h2>
       <p class="sub">Precios iniciales, a validar con una prueba piloto.</p>
       <div class="plans">
-        <table>
-          <caption>Comparación de los planes Gratis y Premium</caption>
+        <div class="tbl"><table>
+          <caption class="sr">Comparación de los planes Gratis y Premium</caption>
           <thead>
             <tr>
-              <th scope="col"><span class="sr">Función</span></th>
+              <th scope="col">Qué incluye cada plan</th>
               <th scope="col"><div class="tier">Gratis</div><div class="price">$0<small>al mes</small></div></th>
               <th scope="col" class="pre-col"><span class="badge">Más popular</span><div class="tier">Premium</div><div class="price">$3<small>al mes</small></div></th>
             </tr>
@@ -329,7 +333,7 @@ footer p+p{margin-top:6px;max-width:52em}
             <tr><th scope="row">Herramientas de organización</th><td><i class="fa-solid fa-minus no" aria-hidden="true"></i><span class="sr">No incluido</span></td><td class="pre-col"><i class="fa-solid fa-check ok" aria-hidden="true"></i><span class="sr">Incluido</span></td></tr>
             <tr><th scope="row">Recordatorios</th><td><i class="fa-solid fa-minus no" aria-hidden="true"></i><span class="sr">No incluido</span></td><td class="pre-col"><i class="fa-solid fa-check ok" aria-hidden="true"></i><span class="sr">Incluido</span></td></tr>
           </tbody>
-        </table>
+        </table></div>
       </div>
       <ul class="promos">
         <li><i class="fa-solid fa-gift" aria-hidden="true"></i><span>7 días de Premium gratis al registrarte</span></li>
